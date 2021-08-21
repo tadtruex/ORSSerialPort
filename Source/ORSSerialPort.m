@@ -253,7 +253,7 @@ static __strong NSMutableArray *allSerialPorts;
 	dispatch_queue_t mainQueue = dispatch_get_main_queue();
 
 	int descriptor=0;
-	descriptor = open([self.path cStringUsingEncoding:NSASCIIStringEncoding], O_RDWR | O_NOCTTY | O_EXLOCK | O_NONBLOCK);
+	descriptor = open([self.path cStringUsingEncoding:NSASCIIStringEncoding], O_RDWR | O_NOCTTY /*| O_EXLOCK | O_NONBLOCK */);
 	if (descriptor < 1)
 	{
 		// Error
